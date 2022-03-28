@@ -1,13 +1,11 @@
 const express = require('express');
 const app = express();
-
-const port = 4000;
+require('dotenv').config();
+const port = process.env.PORT;
 
 
 app.get('/', (req, res) => {
-    res.send('The Campus connect is running')
+    res.send('The Campus connect is running ' + process.env.PORT)
 });
 
-app.listen(port, () => {
-    console.log(`Server started on port :  ${port}`);
-});
+app.listen(port);
