@@ -1,10 +1,16 @@
 const route = require('express').Router();
 
 
+// --- === Middleware === --- \\
+// --- === Middleware === --- \\
 
-route.get('/', (req, res) => {
-    res.json({ success: true, message: 'The has been successsfull run.' });
-});
+// --- === All Controllers === --- \\
+const AuthController = require('../controllers/Auth/AuthController')
+// --- === All Controllers === --- \\
+
+
+
+route.get('/User',AuthController.Login);
 
 
 module.exports = route
