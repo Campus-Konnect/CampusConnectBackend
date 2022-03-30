@@ -21,3 +21,10 @@ exports.Login = (req, res) => {
         // --- Success Function --- \\
     });
 }
+
+
+// --- === Home Function === --- \\
+exports.Home = (req, res) => {
+    res.json({ success: ture, message: "Hello From Home Auth  Controller " });
+}
+// --- === Home Function === --- \\

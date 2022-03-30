@@ -2,6 +2,7 @@ const route = require('express').Router();
 
 
 // --- === Middleware === --- \\
+const AuthMiddleware = require('../middleware/AuthMiddleware')
 // --- === Middleware === --- \\
 
 // --- === All Controllers === --- \\
@@ -10,7 +11,14 @@ const AuthController = require('../controllers/Auth/AuthController')
 
 
 
-route.get('/User',AuthController.Login);
+
+// --- Auth Route --- \\
+route.get('/Login',AuthController.Login);
+// --- Auth Route --- \\
+
+// --- Home Route --- \\
+route.get('/Home',AuthMiddleware.Auth,AuthController.Home);
+// --- Home Route --- \\
 
 
 module.exports = route
