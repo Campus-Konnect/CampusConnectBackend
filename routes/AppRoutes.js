@@ -12,6 +12,7 @@ const ClassController = require('../controllers/Settings/ClassController');
 const SubjectController = require('../controllers/Settings/SubjectController');
 const TecherController = require('../controllers/Schools/TeacherController');
 const StudentController = require('../controllers/Students/StudentController');
+const SessionController = require('../controllers/Session/SessionController');
 
 // --- === All Controllers === --- \\
 
@@ -78,6 +79,15 @@ route.post('/StudentsAdmission', AuthMiddleware.Auth, StudentController.Students
 route.get('/StudentsEdit', AuthMiddleware.Auth, StudentController.StudentsEdit);
 route.post('/StudentsAdmissionUpdate', AuthMiddleware.Auth, StudentController.StudentsAdmissionUpdate);
 // --- === Student Admission === --- \\
+
+
+// --- === Session Mangament === --- \\
+route.get('/SessionList', AuthMiddleware.Auth, SessionController.SessionList);
+route.post('/SessionCreate', AuthMiddleware.Auth, SessionController.SessionCreate);
+route.get('/SessionEdit', AuthMiddleware.Auth, SessionController.SessionEdit);
+route.post('/SessionUpdate', AuthMiddleware.Auth, SessionController.SessionUpdate);
+route.get('/SessionRemove', AuthMiddleware.Auth, SessionController.SessionRemove);
+// --- === Session Mangament === --- \\
 
 // --- === Settings === --- \\
 
