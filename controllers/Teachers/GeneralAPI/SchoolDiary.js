@@ -7,6 +7,7 @@ const Globel = require('../../../config/Global');
 
 // --- === Post Remark Function === --- \\
 exports.PostRemarks = (req, res) => {
+    return res.send("Response:"+req.query);
     db.query('INSERT INTO general__remarks (school_id, teacher_id, student_id, remark) VALUES("?","?","?","?")', [req.query.school_id, req.query.teacher_id, req.query.student_id, req.query.remark], function (err, data) {
         if (err) {
             console.log(err);
