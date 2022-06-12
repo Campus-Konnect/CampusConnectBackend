@@ -10,7 +10,7 @@ exports.PostRemarks = (req, res) => {
     db.query('INSERT INTO general__remarks (teacher_id, student_id, remark) VALUES("?","?","?")', [req.query.teacher_id, student_id, remark], function (err, data) {
         if (err) {
             console.log(err);
-            return res.json({ success: false, message: 'Oops somethinge went went wronge.' });
+            return res.json({ success: false, message: 'Oops somethinge went went wronge!!' });
         } else {
             if (data.length > 0) {
                 return res.json({ success: true, message: "Remark has been sent!", data: data });
