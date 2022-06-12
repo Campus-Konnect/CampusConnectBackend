@@ -10,6 +10,7 @@ const GeneralAPI = require('../controllers/Teachers/GeneralAPI/SchoolDiary');
 
 route.post('/PostRemark', AuthMiddleware.Auth, GeneralAPI.PostRemarks);
 route.get('/GetRemarks', AuthMiddleware.Auth, GeneralAPI.GetRemarks);
+route.get('/TestRemark', AuthMiddleware.Auth, GeneralAPI.GetRemarks);
 
 
 
