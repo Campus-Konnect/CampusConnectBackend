@@ -23,7 +23,7 @@ exports.PostRemarks = (req, res) => {
 exports.GetRemarks = (req, res) => {
     var start = req.query.page * req.query.limit;
     // db.query('SELECT * FROM general__remarks WHERE school_id=? AND student_id=? LIMIT ?, ? ORDER BY remark_id DESC; SELECT CEIL(COUNT(*) / ?) AS TotalPages WHERE school_id=? AND student_id=?', [req.query.school_id,req.query.student_id, start, req.query.limit, req.query.student_id, start, req.query.limit, req.query.school_id, req.query.student_id], function (err, data) {
-        db.query('SELECT * FROM general__remarks WHERE school_id=? AND student_id=? LIMIT 0,10', [req.query.school_id,req.query.student_id], function (err, data) {
+        db.query('SELECT * FROM general__remarks WHERE school_id=? AND student_id=? LIMIT 0,?', [req.query.school_id,req.query.student_id,req.query.limit], function (err, data) {
         if (err) {
             console.log(err);
             return res.json({ success: false, message: 'Oops somethinge went went wronge!!'+err.message });
