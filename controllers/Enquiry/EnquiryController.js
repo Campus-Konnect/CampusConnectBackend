@@ -48,7 +48,7 @@ exports.EnquiryEdit = (req, res) => {
 exports.EnquiryUpdate = (req, res) => {
     var form = new formidable.IncomingForm();
     form.parse(req, function (_err, fields) {
-        db.query('UPDATE enquiries SET orgnization_id = ?,school_id = ?,child_name = ?,father_name =?,surname = ?,mother_name = ?,child_dob = ?,addmission_class = ?,gender = ?,primary_contact = ?,secondry_contact = ?,email = ?,registration_fees = ?,payment_status = ?,address = ?, remark = ?', [fields.orgnization_id, fields.school_id, fields.child_name, fields.father_name, fields.surname, fields.mother_name, fields.child_dob, fields.addmission_class, fields.gender, fields.primary_contact, fields.secondry_contact, fields.email, fields.registration_fees, fields.payment_status, fields.address, fields.remark], function (err) {
+        db.query('UPDATE enquiries SET orgnization_id = ?,school_id = ?,child_name = ?,father_name =?,surname = ?,mother_name = ?,child_dob = ?,addmission_class = ?,gender = ?,primary_contact = ?,secondry_contact = ?,email = ?,registration_fees = ?,payment_status = ?,address = ?, remark = ? WHERE enquiry_id = ?', [fields.orgnization_id, fields.school_id, fields.child_name, fields.father_name, fields.surname, fields.mother_name, fields.child_dob, fields.addmission_class, fields.gender, fields.primary_contact, fields.secondry_contact, fields.email, fields.registration_fees, fields.payment_status, fields.address, fields.remark,fields.enquiry_id], function (err) {
             if (err) {
                 console.log(err);
                 return res.json({ success: false, message: 'Ooops somthing went wronge.' });
