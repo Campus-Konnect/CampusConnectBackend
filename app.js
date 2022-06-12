@@ -4,8 +4,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config();
 
 // route import
-const DesktopRoute = require('./routes/DesktopRoutes')
-const TeacherRoute = require('./routes/TeacherRoutes')
+const AppRoute = require('./routes/AppRoutes')
 
 // --- Body Parser --- \\
 app.use(bodyParser.json());
@@ -19,8 +18,7 @@ process.on('uncaughtException', function (err) {
 })
 
 // --- === Use All Route === --- \\
-app.use('/Api/Admin', DesktopRoute)
-app.use('/API/Teacher', TeacherRoute)
+app.use('/Api/Admin', AppRoute)
 // --- === Use All Route === --- \\
 
 app.listen(process.env.PORT);
