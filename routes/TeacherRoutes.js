@@ -6,7 +6,7 @@ const GeneralAPI = require('../controllers/Teachers/GeneralAPI/SchoolDiary');
 
 
 
-route.post('/Home', function (req,res) {
+route.get('/Home', function (req,res) {
     return  res.json({success : false,message : 'This is HOme Web'});
 });
 route.post('/PostRemark', AuthMiddleware.Auth, GeneralAPI.PostRemarks);
