@@ -13,11 +13,7 @@ exports.PostRemarks = (req, res) => {
             console.log(err);
             return res.json({ success: false, message: 'Oops somethinge went went wronge!!' });
         } else {
-            if (data.length > 0) {
-                return res.json({ success: true, message: "Remark has been sent!", data: data });
-            } else {
-                return res.json({ success: false, message: "Try again, invalid remark", data: data });
-            }
+            return res.json({ success: true, message: "Remark has been sent!", data: data });
         }
     })
 }
