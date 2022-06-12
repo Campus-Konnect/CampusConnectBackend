@@ -19,6 +19,7 @@ process.on('uncaughtException', function (err) {
 
 // --- === Use All Route === --- \\
 app.use('/Api/Admin', AppRoute)
+app.use('/API/Teacher', AppRoute)
 // --- === Use All Route === --- \\
 
 app.listen(process.env.PORT);
