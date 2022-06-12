@@ -7,7 +7,7 @@ const Globel = require('../../../config/Global');
 
 // --- === Post Remark Function === --- \\
 exports.PostRemarks = (req, res) => {
-    db.query('INSERT INTO remarks (teacher_id, student_id, remark) VALUES("?","?","?")', [req.query.teacher_id, student_id, remark], function (err, data) {
+    db.query('INSERT INTO general__remarks (teacher_id, student_id, remark) VALUES("?","?","?")', [req.query.teacher_id, student_id, remark], function (err, data) {
         if (err) {
             console.log(err);
             return res.json({ success: false, message: 'Oops somethinge went went wronge.' });
@@ -25,7 +25,7 @@ exports.PostRemarks = (req, res) => {
 // --- === Post Remark Function === --- \\
 exports.GetRemarks = (req, res) => {
     var start = req.query.page * req.query.limit;
-    db.query('SELECT * FROM remarks WHERE school_id=? LIMIT ?, ? ORDER BY remark_id DESC; SELECT CEIL(COUNT(*) / ?) AS TotalPages WHERE school_id=?', [req.query.school_id, start, req.query.limit, start, req.query.limit, req.query.school_id], function (err, data) {
+    db.query('SELECT * FROM general__remarks WHERE school_id=? LIMIT ?, ? ORDER BY remark_id DESC; SELECT CEIL(COUNT(*) / ?) AS TotalPages WHERE school_id=?', [req.query.school_id, start, req.query.limit, start, req.query.limit, req.query.school_id], function (err, data) {
         if (err) {
             console.log(err);
             return res.json({ success: false, message: 'Oops somethinge went went wronge.'+err });
