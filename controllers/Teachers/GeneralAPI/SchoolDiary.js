@@ -30,7 +30,7 @@ exports.GetRemarks = (req, res) => {
             console.log(err);
             return res.json({ success: false, message: 'Oops somethinge went went wronge?'+err.message });
         } else {
-            if (data.length > 0) {
+            if (data[0].length > 0) {
                 return res.json({ success: true, data: data[0], currentPage: req.query.page, totalPages: data[1], previous:  req.query.page>0?true:false, next:totalPages==req.query.page+1?false:true });
             } else {
                 return res.json({ success: false, message: "No remarks found!" ,data: data });
