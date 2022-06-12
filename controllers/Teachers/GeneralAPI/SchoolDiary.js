@@ -1,8 +1,8 @@
 const path = require('path');
 const fs = require('fs');
-const db = require('../../config/Config')
+const db = require('../../../config/Config')
 const formidable = require('formidable');
-const Globel = require('../../config/Global');
+const Globel = require('../../../config/Global');
 
 
 // --- === Post Remark Function === --- \\
