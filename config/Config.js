@@ -8,7 +8,7 @@ var con = mysql.createConnection({
     database: process.env.DB_NAME,
 })
 
-con.connect();
+// con.connect();
 
 
 module.exports = con;
