@@ -117,7 +117,7 @@ route.get('/StockInList', AuthMiddleware.Auth, InventoryController.StockInList);
 route.post('/StockIn', AuthMiddleware.Auth, InventoryController.StockIn);
 route.get('/StockOutList', AuthMiddleware.Auth, InventoryController.StockOutList);
 route.post('/StockOut', AuthMiddleware.Auth, InventoryController.StockOut);
-route.get('/InventoryItemStatus', AuthMiddleware.Auth, InventoryController.InventoryItemStatus);
+route.get('/InventoryItemStatus', AuthMiddleware.Auth, InventoryController.InventoryItemStatus); // hello rputes
 // --- Inventory Stock Route
 
 // ---  === Inventory  Routes === --- \\
