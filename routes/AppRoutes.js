@@ -87,7 +87,7 @@ route.get('/SessionList', AuthMiddleware.Auth, SessionController.SessionList);
 route.post('/SessionCreate', AuthMiddleware.Auth, SessionController.SessionCreate);
 route.get('/SessionEdit', AuthMiddleware.Auth, SessionController.SessionEdit);
 route.post('/SessionUpdate', AuthMiddleware.Auth, SessionController.SessionUpdate);
-route.get('/SessionRemove', AuthMiddleware.Auth, SessionController.SessionRemove); 
+route.get('/SessionRemove', AuthMiddleware.Auth, SessionController.SessionRemove); //s dlsklkls
 // --- === Session Mangament === --- \\
 
 // --- === Settings === --- \\
