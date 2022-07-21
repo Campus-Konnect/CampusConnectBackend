@@ -109,7 +109,7 @@ route.get('/InventoryItemEdit', AuthMiddleware.Auth, InventoryController.Invento
 route.post('/InventoryItemUpdate', AuthMiddleware.Auth, InventoryController.InventoryItemUpdate);
 // --- Inventory Items Route
 
-// --- Inventory Stock Route
+// --- Inventory Stock Route --- \\
 route.get('/InventoryAccounts', AuthMiddleware.Auth, InventoryController.InventoryAccounts);
 route.get('/GetitmeList', AuthMiddleware.Auth, InventoryController.GetitmeList);
 route.get('/StockList', AuthMiddleware.Auth, InventoryController.StockList);
@@ -117,8 +117,8 @@ route.get('/StockInList', AuthMiddleware.Auth, InventoryController.StockInList);
 route.post('/StockIn', AuthMiddleware.Auth, InventoryController.StockIn);
 route.get('/StockOutList', AuthMiddleware.Auth, InventoryController.StockOutList);
 route.post('/StockOut', AuthMiddleware.Auth, InventoryController.StockOut);
-route.get('/InventoryItemStatus', AuthMiddleware.Auth, InventoryController.InventoryItemStatus); // hello rputes
-// --- Inventory Stock Route
+route.get('/InventoryItemStatus', AuthMiddleware.Auth, InventoryController.InventoryItemStatus);
+// --- Inventory Stock Route --- \\
 
 // ---  === Inventory  Routes === --- \\
 

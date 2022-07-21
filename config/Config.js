@@ -8,7 +8,20 @@ var con = mysql.createPool({
     database: process.env.DB_NAME,
 });
 
-// con.connect();
+con.connect(function (err) {
+    if (err) throw err;
+    console.log('connected!', err)
+});
 
+
+con.on('error', () => console.log('err'))
+
+var del = con._protocol._delegateError;
+con._protocol._delegateError = function (err, sequence) {
+    if (err.fatal) {
+        console.trace('fatal error: ' + err.message);
+    }
+    return del.call(this, err, sequence);
+};
 
 module.exports = con;
