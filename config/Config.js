@@ -14,14 +14,4 @@ con.connect(function (err) {
 });
 
 
-con.on('error', () => console.log('err'))
-
-var del = con._protocol._delegateError;
-con._protocol._delegateError = function (err, sequence) {
-    if (err.fatal) {
-        console.trace('fatal error: ' + err.message);
-    }
-    return del.call(this, err, sequence);
-};
-
 module.exports = con;
